@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-sql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: osiris_admin
+      POSTGRES_PASSWORD: OsirisAdmin1234
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    restart: unless-stopped
+
+volumes:
+  postgres:
